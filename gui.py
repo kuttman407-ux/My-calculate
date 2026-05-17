@@ -1,10 +1,12 @@
 import tkinter as tk # импортируем нашу библиотеку 
+from logger import log_history
 
 def calculate():#создаем функцию calculate для рассчетов
     example = entry.get() #Берем текст из поля ввода
     try:#констурция при которой мы выполняем часть кода 
         result = eval(example)  #можно сказать это сердце программы ведь eval помогает для решения примеров 
         label_res.config(text=f"Результат : {result}",fg="black", ) # метка с названием и выводом нашего результата а .config это настройка нашего label
+        log_history(f"{example} = {result}")
     except Exception:# а это вторая часть когда срабатывает когда у наш происходит ошибка (ошибки разделяютя на виды со своими названиями)
         label_res.config(text="Ошибка!", fg ="red")# вывод в случаи ошибки с настройкой 
 def clear():#функция очистик

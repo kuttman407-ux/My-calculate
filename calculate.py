@@ -1,3 +1,5 @@
+from logger import log_history
+
 while True:
     while True:
         try:
@@ -22,13 +24,21 @@ while True:
             print("Тут ошибка , нужно вводить только числа ")
         
     if c == "+":
-        print("Сумма чисел равна : " ,a+b)
-    elif c =="-":
-            print("Разность чисел равна: ", a-b)
-    elif c =="/":
-        print("Деление числа ",a," на число ",b," равна",a/b)
-    elif c =="*":
-        print("Умножение числа ",a," на число ",b," равна", a*b)
+        res = a + b
+        print("Сумма чисел равна : ", res)
+        log_history(f"{a} + {b} = {res}")
+    elif c == "-":
+        res = a - b
+        print("Разность чисел равна: ", res)
+        log_history(f"{a} - {b} = {res}")
+    elif c == "/":
+        res = a / b
+        print("Деление числа ", a, " на число ", b, " равна", res)
+        log_history(f"{a} / {b} = {res}")
+    elif c == "*":
+        res = a * b
+        print("Умножение числа ", a, " на число ", b, " равна", res)
+        log_history(f"{a} * {b} = {res}")
     else:
         print("Error")
     while True:

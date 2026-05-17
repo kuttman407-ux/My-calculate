@@ -1,3 +1,5 @@
+from logger import log_history
+
 while True:
     try:
         user_input=input("Введите ваш пример: ").strip().lower()
@@ -5,6 +7,7 @@ while True:
             break
         result = eval(user_input)
         print(result)
+        log_history(f"{user_input} = {result}")
     except Exception:
         print("Ошибка не корретный ввод примера")
     while True:
